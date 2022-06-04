@@ -12,7 +12,7 @@ const Home = () => {
       try {
         setIsLoading(true);
         const { data } = await axios.get(
-          ' http://refertest.pythonanywhere.com/job/openings'
+          'https://refertest.pythonanywhere.com/job/openings'
         );
         const jobsData = data?.data;
         setJobs(jobsData);
@@ -41,13 +41,13 @@ const Home = () => {
     <div className="flex flex-col items-center my-20 gap-6 px-3">
       {jobs.map((job) => (
         <JobList
-        key={job.id}
-        company={job.company}
-        designation={job.designation}
-        location={job.location}
-        min_experience={job.min_experience}
-        skills={job.skills}
-      />
+          key={job.id}
+          company={job.company}
+          designation={job.designation}
+          location={job.location}
+          min_experience={job.min_experience}
+          skills={job.skills}
+        />
       ))}
     </div>
   );

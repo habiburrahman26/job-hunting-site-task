@@ -36,7 +36,7 @@ const JobList = ({
         </div>
         <p>
           <span className="font-semibold">Expricence:</span>
-          {min_experience > 0 ? ` ${min_experience} Year` : ' fresher opening'}
+          {min_experience > 0 ? ` ${min_experience} Years` : ' fresher opening'}
         </p>
         <div>
           <p>

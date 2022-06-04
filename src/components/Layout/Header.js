@@ -6,7 +6,7 @@ const Header = () => {
 
   useEffect(() => {
     axios
-      .get('http://refertest.pythonanywhere.com/user/data')
+      .get('https://refertest.pythonanywhere.com/user/data')
       .then(({ data }) => {
         const user = data?.data;
         setUserData(user);
