@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [userData, setUserData] = useState({});
@@ -15,7 +14,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="navbar bg-base-100 shadow lg:px-32">
+    <div className="navbar bg-base-100 shadow md:px-16 lg:px-32">
       <div className="flex-1">
         <p className="btn btn-ghost normal-case text-xl">Job-Hunting</p>
       </div>
@@ -34,10 +33,10 @@ const Header = () => {
               <p className='font-semibold'>{userData.name}</p>
             </li>
             <li>
-              <Link to="/">Profile</Link>
+              <p>{userData.college}</p>
             </li>
             <li>
-              <Link to="/">Logout</Link>
+              <p>Logout</p>
             </li>
           </ul>
         </div>

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Jobs from './Jobs.ja';
+import JobList from './JobList';
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -26,12 +25,10 @@ const Home = () => {
     fetchJobs();
   }, []);
 
-  console.log(jobs);
-
   if (isLoading) {
     return (
       <div className="text-center mt-20">
-        <button class="btn loading">loading</button>
+        <button className="btn loading">loading</button>
       </div>
     );
   }
@@ -41,22 +38,16 @@ const Home = () => {
   }
 
   return (
-    <div className="flex flex-col items-center my-20 gap-6">
-      {jobs?.map((job) => (
-        <div
-          className="card lg:w-[600px] bg-base-100 shadow rounded-sm"
-          key={job.id}
-        >
-          <div className="card-body">
-            <h2 className="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <Link to={`/jobDetails/${job.id}`} className="text-success">
-                View Details &#62;
-              </Link>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col items-center my-20 gap-6 px-3">
+      {jobs.map((job) => (
+        <JobList
+        key={job.id}
+        company={job.company}
+        designation={job.designation}
+        location={job.location}
+        min_experience={job.min_experience}
+        skills={job.skills}
+      />
       ))}
     </div>
   );
